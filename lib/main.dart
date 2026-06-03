@@ -13,7 +13,45 @@ class BarbeariaApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Barbearia Estilo',
-      theme: ThemeData.dark(),
+
+      // 🎨 TEMA PROFISSIONAL
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.amber,
+        scaffoldBackgroundColor: Colors.black,
+
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.black,
+          centerTitle: true,
+          elevation: 0,
+        ),
+
+        colorScheme: ColorScheme.dark(
+          primary: Colors.amber,
+          secondary: Colors.amberAccent,
+        ),
+
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.amber,
+            foregroundColor: Colors.black,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            padding: const EdgeInsets.symmetric(vertical: 14),
+          ),
+        ),
+
+        cardTheme: CardThemeData(
+          color: Colors.grey[900],
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          elevation: 3,
+          margin: const EdgeInsets.symmetric(vertical: 6),
+        ),
+      ),
+
       home: const HomeScreen(),
     );
   }
